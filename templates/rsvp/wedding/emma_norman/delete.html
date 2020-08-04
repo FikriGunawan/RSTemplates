@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container-fluid pos-rel pt-lg-15p pb-lg-25p pl-lg-10p pr-lg-10p">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Delete Birthday?</legend>
+                <h2>Are you sure you want to delete your birthday event? "{{ birthday.birthday_name }}"</h2>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+                <a class="btn btn-outline-secondary" href="{% url 'birthday_detail' birthday.slug %}">Cancel</a>
+            </div>
+        </form>
+    </div>
+    <div class="w-lg-100p h-lg-100vh"></div>
+{% endblock content %}
