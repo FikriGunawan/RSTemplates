@@ -1,6 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load compress %}
 {% load crispy_forms_tags %}
+
+
+    {% compress js %}
+        {% static 'editor/js/sample.js' %}
+        {% static 'editor/js/jquery.js' %}
+        {% static 'editor/js/ckeditor.js' %}
+        {% static 'editor/js/sf.js' %}
+    {% endcompress %}
+
+    {% compress css %}
+        {% static 'editor/css/samples.css' %}
+        {% static 'editor/css/neo.css' %}
+        {% static 'editor/css/contents.css' %}
+    {% endcompress %}
 
 {% block content %}
 
@@ -9,7 +24,7 @@
             <div class="col-lg-12">
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <h3>Birthday Form</h3>
+                    <h3>Emma Norman Form</h3>
                         {{ form | crispy }}
                     <button class="btn btn-outline-primary btn-sm" type="submit">Submit</button>
                 </form>
@@ -17,5 +32,6 @@
         </div>
     </div>
     <div class="w-lg-100p h-lg-150vh"></div>
+
 
 {% endblock %}
