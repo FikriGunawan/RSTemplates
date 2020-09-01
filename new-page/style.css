@@ -1403,6 +1403,19 @@
     left: 0;
     width: 100%;
   }
+  .reservasidulu-login .ornament-01{
+    position: absolute;
+    top: 30vh;
+    left: 7vw;
+    width: 34%;
+    z-index: -1;
+  }
+  .reservasidulu-login .ornament-02{
+    position: absolute;
+    bottom: 0;
+    right: 1vw;
+    width: 41%;
+  }
 /* Signup Page */
   /* Section Content */
   .reservasidulu-signup form span,
