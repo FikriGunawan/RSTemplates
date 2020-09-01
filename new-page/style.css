@@ -1412,7 +1412,7 @@
   }
   .reservasidulu-login .ornament-02{
     position: absolute;
-    bottom: 0;
+    bottom: 18vh;
     right: 1vw;
     width: 41%;
   }
@@ -1469,31 +1469,122 @@
     color: #333333;
   }
   /* Profile & Login Page */
-  .profile-content .wrap,
-  .login-content .wrap{
-    margin: 0 auto;
-    width: 70%;
-  }
-  .profile-content .wrap .profile-picture{
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    margin: 0 auto;
-    max-width: 100%;
-    width: 150px;
-    max-height: 100%;
-    height: 150px;
-    border-radius: 100%;
-  }
-  .profile-content .wrap .btn-rectangle,
-  .profile-content .wrap form .btn-whiteoutline,
-  .login-content .wrap form .btn-rectangle{
-    float: right;
-    width: auto;
-  }
-  .profile-content .wrap form input,
-  .login-content .wrap form input{padding: 1.5% 2%;}
-  .profile-content .wrap form .btn-rectangle{margin-left: 2.5%;}
+    .profile-content .wrap,
+    .login-content .wrap{
+      margin: 0 auto;
+      width: 70%;
+    }
+    .profile-content .wrap .profile-picture{
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      margin: 0 auto;
+      max-width: 100%;
+      width: 150px;
+      max-height: 100%;
+      height: 150px;
+      border-radius: 100%;
+    }
+    .profile-content .wrap .btn-rectangle,
+    .profile-content .wrap form .btn-whiteoutline,
+    .login-content .wrap form .btn-rectangle{
+      float: right;
+      width: auto;
+    }
+    .profile-content .wrap form input,
+    .login-content .wrap form input{padding: 1.5% 2%;}
+    .profile-content .wrap form .btn-rectangle{margin-left: 2.5%;}
+  /* My Products */
+    .my-product-content .wrap{
+      border-radius: .25rem;
+      border: 1px solid rgba(0,0,0,.125);
+    }
+    .my-product-content .wrap .card{
+      padding: 5%;
+      background: #fff;
+      border: none;
+    }
+    .my-product-content .wrap .card:nth-child(even){background: #f5f5f5;}
+    .my-product-content .wrap .card .info{left: 5%;}
+    .my-product-content .wrap .card .title{
+      font-family: "Montserrat Bold";
+      font-size: 24px;
+    }
+    .my-product-content .wrap .card .category{
+      margin-bottom: 1%;
+      font-family: "Montserrat Regular";
+      font-size: 16px;
+    }
+    .my-product-content .wrap .card .date{
+      font-family: "Montserrat Regular";
+      font-size: 14px;
+    }
+    .my-product-content .wrap .card .btn-whiteoutline,
+    .my-product-content .wrap .card .btn-rectangle{
+      margin: 0 auto 5%;
+      padding: 2%;
+      width: 50%;
+    }
+  /* My Guest */
+    /* Header Info */
+    .my-guest-content .info{margin: 3% 0;}
+    .my-guest-content .info a{
+      padding-bottom: 2px;
+      color: #F8B133;
+      border-bottom: 1px solid #F8B133;
+    }
+    .my-guest-content .info .header-attending{border-right: 1px solid #c6c6c6;}
+    .my-guest-content .info .header-attending .num{
+      font-family: "Montserrat Bold";
+      font-size: 100px;
+      color: #F8B133;
+    }
+    .my-guest-content .info .sna .submitted{
+      padding-bottom: 8%;
+      border-bottom: 1px solid #c6c6c6;
+    }
+    .my-guest-content .info .sna .notattending{padding-top: 5%;}
+    .my-guest-content .info .num-sm{color: #F8B133;}
+    /* Table Attending */
+    .my-guest-content .table-attending .card{
+      padding: 4%;
+      height: 640px;
+      overflow-y: auto;
+    }
+    .my-guest-table{margin-bottom: 0;}
+    .my-guest-table thead tr th{
+      font-family: "Montserrat Bold";
+      font-size: 18px !important;
+      font-weight: unset;
+      border: none;
+    }
+    .my-guest-table thead tr th:first-child,
+    .my-guest-table tbody tr td:first-child{
+      padding-left: 0;
+      width: 70px;
+    }
+    .my-guest-table thead tr th:last-child,
+    .my-guest-table tbody tr td:last-child{
+      padding-right: 0;
+      width: 130px;
+    }
+    .my-guest-table tbody tr td{
+      color: #999999;
+      border-top: 1px solid #e6e7e8;
+    }
+    .my-guest-table tbody tr:first-child td,
+    .my-guest-content .table-notattending .card .my-guest-table tbody tr:first-child td{border-top: 2px solid #939598;}
+    /* Table Not Attending */
+    .my-guest-content .table-notattending .card,
+    .my-guest-content .table-gift .card{padding: 4%;}
+    .my-guest-content .table-notattending .card .my-guest-table tbody tr td{border: none;}
+    .my-guest-content .table-notattending .card .my-guest-table thead tr th:first-child,
+    .my-guest-content .table-notattending .card .my-guest-table tbody tr td:first-child,
+    .my-guest-content .table-gift .card .my-guest-table thead tr th:last-child,
+    .my-guest-content .table-gift .card .my-guest-table tbody tr td:last-child{width: unset;}
+    /* Table Gift */
+    .my-guest-content .info .topgift table{width: 100%;}
+    .my-guest-content .info .topgift table tr td:first-child{width: 69.1%;}
 
 
 
