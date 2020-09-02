@@ -359,12 +359,12 @@
     left: 1vw;
   }
   #footer .gotop img.child{
-    top: 20vh;
+    top: 18vh;
     left: 0;
     right: 0;
   }
   #footer .gotop img.baloon{
-    top: 2vh;
+    top: 0vh;
     left: 31%;
     right: 0;
     width: 130px;
@@ -1585,83 +1585,124 @@
     /* Table Gift */
     .my-guest-content .info .topgift table{width: 100%;}
     .my-guest-content .info .topgift table tr td:first-child{width: 69.1%;}
-
-
-
-
-
-
-
-
-/* Account Page */
-  .account-info .profile-img{
-    overflow: hidden;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-  }
-  .account-info .profile-img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .account-info .profile-img .file{
-    position: relative;
-    overflow: hidden;
-    margin-top: -40%;
-    padding-bottom: 10%;
-    width: 100%;
-    border: none;
-    border-radius: 0;
-    font-size: 15px;
-    background: #212529b8;
-  }
-  .account-info .profile-img .file input{
-    position: absolute;
-    opacity: 0;
+/* About Page */
+  /* Section Banner */
+  .about-banner .boxv.desc{
+    margin: 0 auto;
+    top: 40%;
     right: 0;
-    top: 0;
+    left: 50%;
+    width: 540px;
   }
-  .account-info .profile-edit-btn{
-    border: none;
-    border-radius: 1.5rem;
-    width: 70%;
-    padding: 2%;
-    font-weight: 600;
-    color: #6c757d;
+  .about-banner .boxv.image{
+    top: 50%;
+    width: 44%;
+  }
+  /* Section Brief */
+  .about-brief h4{line-height: 30px;}
+  .about-brief .image{width: 94%;}
+/* How To Page */
+  /* Section Banner */
+  .howto-banner .boxv.desc{
+    top: 58%;
+    left: 6%;
+    right: unset;
+  }
+  .howto-banner .boxv.image{
+    top: 55%;
+    left: unset;
+    right: 0;
+    width: 64%;
+  }
+  /* Tab Navigation*/
+  .tabs-howto #nav-box{
+    padding-left: 0;
+    list-style-type: none;
+  }
+  .tabs-howto #nav-box li{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 17vw;
+  }
+  .tabs-howto #nav-box li .wrap{
+    display: inline-block;
+    width: 47%;
+  }
+  .tabs-howto #nav-box li:last-child{width: 10vw;}
+  .tabs-howto #nav-box li:last-child .wrap{width: 100%;}
+  .tabs-howto #nav-box li:after{
+    margin: 6vh 0 0;
+    content: '';
+    width: 40%;
+    height: 9px;
+    background: url('images/howto-number-line.png');
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat !important;
+    background-position: center;
+    float: right;
+  }
+  .tabs-howto #nav-box li:last-child:after{display: none;}
+  .tabs-howto #nav-box li .wrap .nav-tab .image{
+    position: relative;
+    display: inline-block;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    margin-bottom: 5%;
+    width: 95px;
+    height: 95px;
     cursor: pointer;
   }
-  .account-info .proile-rating{margin-top: 5%;}
-  .account-info .profile-head .nav-tabs{margin-bottom:5%;}
-  .account-info .profile-head .nav-tabs .nav-link{border: none;}
-  .account-info .profile-head .nav-tabs .nav-link.active{
-    border: none;
-    border-bottom:2px solid #0062cc;
+  .tabs-howto #nav-box li .wrap .nav-tab .image .boxc{
+    font-family: "Montserrat Bold";
+    font-size: 40px;
+    letter-spacing: 4px;
+    color: #FFB64D;
   }
-  .account-info .profile-work{padding: 0 0 14%;}
-  .account-info .profile-work p{margin-top: 10%;}
-  .account-info .profile-work a{text-decoration: none;}
-  .account-info .profile-work ul{list-style: none;}
-  .account-info .profile-head .nav-tabs a.nav-link{color: #333333;}
-  .account-info .profile-head .nav-tabs a.nav-link:hover,
-  #myTabContent #profile a:hover h5{color: #ffb64d !important;}
-  .account-info .profile-head .nav-tabs .nav-link.active{border-bottom: 2px solid #ffb64d;}
-  #myTabContent{margin-top: -20vh;}
-  #myTabContent #home span{float: right;}
-  #myTabContent ul{padding-left: 15px;}
-  #myTabContent .col-lg-7{padding-left: 0;}
-  #myTabContent .box{height: 25vh;}
-  #editprofile .modal-content{padding: 5%;}
-  #main-account form input, #main-account form textarea{margin-bottom: 30px !important;}
-/* Template Detail Page */
-  #main-templates-detail .button-edit-template{
-    position: fixed;
-    z-index: 1000001 !important;
-    bottom: 20px;
-    right: 20px;
+  .tabs-howto #nav-box li .wrap .nav-tab .image.color .boxc{color: #ffffff;}
+  .tabs-howto #nav-box li .wrap .nav-tab .color{display: none !important;}
+  .tabs-howto #nav-box li .wrap .nav-tab.active .color,
+  .tabs-howto #nav-box li .wrap .nav-tab .color:hover,
+  .tabs-howto #nav-box li .wrap .nav-tab .color.active{display: inline-block !important;}
+  .tabs-howto #nav-box li .wrap .nav-tab.active .icon,
+  .tabs-howto #nav-box li .wrap .nav-tab .icon.active{display: none !important;}
+  .tabs-howto #nav-box li .desc{
+    margin: 0 auto;
+    width: 100px;
   }
-  #main-templates-detail .button-edit-template .button-orange p{top: -5px;}
-  #main-templates-detail .button-edit-template .button-orange img{width: 180px;}
-  #main-templates-detail .templates-detail-content{
-    overflow: hidden;width: 100%;height: auto;border: 1px solid #eaeaea; border-radius: 20px;
+  /* Tab Content */
+  .tabs-howto .tabs .image-01{width: 73%;}
+  .tabs-howto .tabs .image-02{width: 81%;}
+  .tabs-howto .tabs .image-03{width: 83%;}
+  .tabs-howto .tabs .image-04{width: 82%;}
+  .tabs-howto .tabs .ornament-01,
+  .tabs-howto .tabs .ornament-02,
+  .tabs-howto .tabs .ornament-03,
+  .tabs-howto .tabs .ornament-04{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  .tabs-howto .tabs .ornament-01{
+    margin: 0 auto;
+    right: 0;
+    left: 45%;
+    width: 65%;
+  }
+  .tabs-howto .tabs .ornament-02{
+    top: -21vh;
+    left: -19vw;
+    width: 67%;
+  }
+  .tabs-howto .tabs .ornament-03{
+    top: -16vh;
+    left: -8vw;
+    width: 86%;
+  }
+  .tabs-howto .tabs .ornament-04{
+    top: -8vh;
+    left: 2vw;
+    width: 78%;
   }
