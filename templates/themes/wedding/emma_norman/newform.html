@@ -1,0 +1,232 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+        <div id="main-templates">
+        <!-- Section User Navigation -->
+        {% include 'shared/partials/form_nav.html' %}
+
+        <!-- Section User Content -->
+        <div class="container-fluid pos-rel user-content edit-template pt-lg-5p pb-lg-15p pl-lg-5p pr-lg-5p bg-lightgrey">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="mb-lg-2p">Edit Templates</h3>
+                    <div class="card">
+                        <div class="container-fluid templates-steps pb-lg-10p">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <!-- Navigation Dots -->
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" aria-expanded="true"></a>
+                                        </li>
+                                        <li role="presentation" class="disabled">
+                                            <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" aria-expanded="false"></a>
+                                        </li>
+                                        <li role="presentation" class="disabled">
+                                            <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab"></a>
+                                        </li>
+                                        <li role="presentation" class="disabled">
+                                            <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab"></a>
+                                        </li>
+                                        <li role="presentation" class="disabled">
+                                            <a href="#step5" data-toggle="tab" aria-controls="step5" role="tab"></a>
+                                        </li>
+                                        <li role="presentation" class="disabled">
+                                            <a href="#step6" data-toggle="tab" aria-controls="step6" role="tab"></a>
+                                        </li>
+                                    </ul>
+                                    <form>
+                                        <div class="tab-content" id="main_form">
+                                            <div class="tab-pane active" role="tabpanel" id="step1">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-lg-7">
+                                                            <img class="img-fluid w-lg-100p" src="images/edit-template-image-01.png" alt="reservasidulu" />
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <div class="form-wrap">
+                                                                <h5 class="mb-lg-4p"><b>Main Info</b></h5>
+                                                                <label>Theme</label>
+                                                                <input type="text" name="theme" class="form-control" placeholder="Sheer Blush" disabled />
+                                                                <label>Bride Name*</label>
+                                                                <input type="text" name="bride" class="form-control" />
+                                                                <label>Groom Name*</label>
+                                                                <input type="text" name="groom" class="form-control" />
+                                                                <label>Title*</label>
+                                                                <input type="text" name="title" class="form-control" />
+                                                                <label>Hastag*</label>
+                                                                <input type="text" name="hastag" class="form-control" />
+                                                            </div>
+                                                            <a class="btn-rectangle next-step">Next Step</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" role="tabpanel" id="step2">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-lg-7">
+                                                            <img class="img-fluid w-lg-100p" src="images/edit-template-image-01.png" alt="reservasidulu" />
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <div class="form-wrap">
+                                                                <h5 class="mb-lg-4p"><b>Header</b></h5>
+                                                                <label>Choose images for you slideshow</label>
+                                                                <input type="file" name="image" class="form-control" />
+                                                                <input type="file" name="image" class="form-control" />
+                                                                <input type="file" name="image" class="form-control" />
+                                                            </div>
+                                                            <a class="btn-whiteoutline prev-step mb-lg-4p">Previous Step</a>
+                                                            <a class="btn-rectangle next-step">Next Step</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" role="tabpanel" id="step3">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-lg-7">
+                                                            <img class="img-fluid w-lg-100p" src="images/edit-template-image-02.png" alt="reservasidulu" />
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <div class="form-wrap">
+                                                                <h5 class="mb-lg-4p"><b>Our Story</b></h5>
+                                                                <label>Choose images for story section</label>
+                                                                <input type="file" name="image" class="form-control" />
+                                                                <input type="file" name="image" class="form-control" />
+                                                                <input type="file" name="image" class="form-control mb-lg-4p" />
+                                                                <label>Quotes*</label>
+                                                                <input type="text" name="input_name" class="form-control" />
+                                                                <label>Quotes by*</label>
+                                                                <input type="text" name="input_name" class="form-control" />
+                                                                <label>Our Story</label>
+                                                                <textarea name="ourstory" class="form-control" rows="8"></textarea>
+                                                            </div>
+                                                            <a class="btn-whiteoutline prev-step mb-lg-4p">Previous Step</a>
+                                                            <a class="btn-rectangle next-step">Next Step</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" role="tabpanel" id="step4">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-lg-7">
+                                                            <img class="img-fluid w-lg-100p" src="images/edit-template-image-03.png" alt="reservasidulu" />
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <div class="form-wrap">
+                                                                <h5 class="mb-lg-4p"><b>Date, Time, and Place</b></h5>
+                                                                <label>Ceremony</label>
+                                                                <div class="line-lightgrey w-lg-100p mt-lg-3p mb-lg-5p"></div>
+                                                                <input type="file" name="image" class="form-control mb-lg-4p" />
+                                                                <label>Date and Time*</label>
+                                                                <div class="form-row mb-lg-4p">
+                                                                    <div class="col-lg-6">
+                                                                        <input type="date" name="dateandtime" class="form-control" />
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                        <select class="form-control">
+                                                                            <option>06:00</option>
+                                                                            <option>07:00</option>
+                                                                            <option>08:00</option>
+                                                                            <option>09:00</option>
+                                                                            <option>10:00</option>
+                                                                            <option>11:00</option>
+                                                                            <option>12:00</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <label>Location</label>
+                                                                <textarea name="ourstory" class="form-control mb-lg-10p" rows="5"></textarea>
+                                                                <label>Reception</label>
+                                                                <div class="line-lightgrey w-lg-100p mt-lg-3p mb-lg-5p"></div>
+                                                                <input type="file" name="image" class="form-control mb-lg-4p" />
+                                                                <label>Date and Time*</label>
+                                                                <div class="form-row mb-lg-4p">
+                                                                    <div class="col-lg-6">
+                                                                        <input type="date" name="dateandtime" class="form-control" />
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                        <select class="form-control">
+                                                                            <option>12:00</option>
+                                                                            <option>13:00</option>
+                                                                            <option>14:00</option>
+                                                                            <option>15:00</option>
+                                                                            <option>16:00</option>
+                                                                            <option>17:00</option>
+                                                                            <option>18:00</option>
+                                                                            <option>19:00</option>
+                                                                            <option>20:00</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <label>Location</label>
+                                                                <textarea name="ourstory" class="form-control" rows="5"></textarea>
+                                                            </div>
+                                                            <a class="btn-whiteoutline prev-step mb-lg-4p">Previous Step</a>
+                                                            <a class="btn-rectangle next-step">Next Step</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" role="tabpanel" id="step5">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-lg-7">
+                                                            <img class="img-fluid w-lg-100p" src="images/edit-template-image-04.png" alt="reservasidulu" />
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <div class="form-wrap">
+                                                                <h5 class="mb-lg-4p"><b>Photo Gallery</b></h5>
+                                                                <label>Choose images for gallery section</label>
+                                                                <input type="file" name="image" class="form-control" />
+                                                                <input type="file" name="image" class="form-control" />
+                                                                <input type="file" name="image" class="form-control" />
+                                                                <input type="file" name="image" class="form-control" />
+                                                                <input type="file" name="image" class="form-control" />
+                                                                <input type="file" name="image" class="form-control" />
+                                                                <input type="file" name="image" class="form-control" />
+                                                                <input type="file" name="image" class="form-control" />
+                                                            </div>
+                                                            <a class="btn-whiteoutline prev-step mb-lg-4p">Previous Step</a>
+                                                            <a class="btn-rectangle next-step">Next Step</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" role="tabpanel" id="step6">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-lg-7">
+                                                            <img class="img-fluid w-lg-100p" src="images/edit-template-image-05.png" alt="reservasidulu" />
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <div class="form-wrap">
+                                                                <h5 class="mb-lg-4p"><b>RSVP</b></h5>
+                                                                <label>Choose images for RSVP Section</label>
+                                                                <input type="file" name="image" class="form-control mb-lg-4p" />
+                                                                <label>RSVP Copy</label>
+                                                                <textarea name="ourstory" class="form-control" rows="8"></textarea>
+                                                            </div>
+                                                            <a class="btn-whiteoutline prev-step mb-lg-4p">Previous Step</a>
+                                                            <input type="submit" class="btn-rectangle" value="Save & Preview">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-lg-100p h-lg-115vh bg-lightgrey"></div>
+    </div>
+
+{% endblock %}
