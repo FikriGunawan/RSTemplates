@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -43,21 +44,27 @@
                                                 <div class="container-fluid">
                                                     <div class="row">
                                                         <div class="col-lg-7">
-                                                            <img class="img-fluid w-lg-100p" src="images/edit-template-image-01.png" alt="reservasidulu" />
+                                                            <img class="img-fluid w-lg-100p" src="{% static 'img/edit-template-image-01.png' %}" alt="reservasidulu" />
                                                         </div>
                                                         <div class="col-lg-5">
                                                             <div class="form-wrap">
                                                                 <h5 class="mb-lg-4p"><b>Main Info</b></h5>
-                                                                <label>Theme</label>
-                                                                <input type="text" name="theme" class="form-control" placeholder="Sheer Blush" disabled />
-                                                                <label>Bride Name*</label>
-                                                                <input type="text" name="bride" class="form-control" />
-                                                                <label>Groom Name*</label>
-                                                                <input type="text" name="groom" class="form-control" />
-                                                                <label>Title*</label>
-                                                                <input type="text" name="title" class="form-control" />
-                                                                <label>Hastag*</label>
-                                                                <input type="text" name="hastag" class="form-control" />
+                                                                <label>Theme Name</label>
+                                                                <input type="text" name="theme" class="form-control" placeholder="Emma Norman" disabled />
+                                                                <label>Site URL</label>
+                                                                {{ form.site_url }}
+{#                                                                <input type="text" name="theme" class="form-control" placeholder="Sheer Blush" disabled />#}
+                                                                <label>Title *</label>
+                                                                {{ form.title }}
+{#                                                                <input type="text" name="bride" class="form-control" />#}
+                                                                <label>Logo *</label>
+                                                                {{ form.img_logo }}
+{#                                                                <input type="text" name="groom" class="form-control" />#}
+                                                                <label>Background *</label>
+                                                                {{ form.img_background }}
+{#                                                                <input type="text" name="title" class="form-control" />#}
+{#                                                                <label>Hastag*</label>#}
+{#                                                                <input type="text" name="hastag" class="form-control" />#}
                                                             </div>
                                                             <a class="btn-rectangle next-step">Next Step</a>
                                                         </div>
@@ -68,15 +75,21 @@
                                                 <div class="container-fluid">
                                                     <div class="row">
                                                         <div class="col-lg-7">
-                                                            <img class="img-fluid w-lg-100p" src="images/edit-template-image-01.png" alt="reservasidulu" />
+                                                            <img class="img-fluid w-lg-100p" src="{% static 'img/edit-template-image-02.png' %}" alt="reservasidulu" />
                                                         </div>
                                                         <div class="col-lg-5">
                                                             <div class="form-wrap">
-                                                                <h5 class="mb-lg-4p"><b>Header</b></h5>
-                                                                <label>Choose images for you slideshow</label>
-                                                                <input type="file" name="image" class="form-control" />
-                                                                <input type="file" name="image" class="form-control" />
-                                                                <input type="file" name="image" class="form-control" />
+                                                                <h5 class="mb-lg-4p"><b>Section 2</b></h5>
+{#                                                                <label>Choose images for you slideshow</label>#}
+                                                                <label>Section 2 Image</label>
+                                                                    {{ form.about_img }}
+                                                                <label>About Text</label>
+                                                                    {{ form.about_title }}
+                                                                <label for="">About Brief</label>
+                                                                    {{ form.about }}
+{#                                                                <input type="file" name="image" class="form-control" />#}
+{#                                                                <input type="file" name="image" class="form-control" />#}
+{#                                                                <input type="file" name="image" class="form-control" />#}
                                                             </div>
                                                             <a class="btn-whiteoutline prev-step mb-lg-4p">Previous Step</a>
                                                             <a class="btn-rectangle next-step">Next Step</a>
