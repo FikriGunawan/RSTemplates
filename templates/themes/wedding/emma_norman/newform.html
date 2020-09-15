@@ -40,7 +40,8 @@
                                             <a href="#step6" data-toggle="tab" aria-controls="step6" role="tab"></a>
                                         </li>
                                     </ul>
-                                    <form>
+                                    <form method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
                                         <div class="tab-content" id="main_form">
                                             <div class="tab-pane active" role="tabpanel" id="step1">
                                                 <div class="container-fluid">
@@ -53,16 +54,9 @@
                                                                 <h5 class="mb-lg-4p"><b>Main Info</b></h5>
                                                                 <label>Theme Name</label>
                                                                 <input type="text" name="theme" class="form-control" placeholder="Emma Norman" disabled />
-                                                                {{ form.bride_name | as_crispy_field }}
-                                                                {{ form.grome_name | as_crispy_field }}
-{#                                                                <input type="text" name="theme" class="form-control" placeholder="Sheer Blush" disabled />#}
-                                                                <label>Title *</label>
-{#                                                                {{ form.title }}#}
-                                                                <input type="text" name="bride" class="form-control" />
-{#                                                                <input type="text" name="groom" class="form-control" />#}
-{#                                                                <label>Hastag *</label>#}
-                                                                {{ form.hastag | as_crispy_field }}
-{#                                                                <input type="text" name="hastag" class="form-control" />#}
+                                                                {{ form.bride_name }}
+                                                                {{ form.grome_name }}
+                                                                {{ form.hashtag }}
                                                             </div>
                                                             <a class="btn-rectangle next-step">Next Step</a>
                                                         </div>
@@ -77,19 +71,15 @@
                                                         </div>
                                                         <div class="col-lg-5">
                                                             <div class="form-wrap">
-                                                                <h5 class="mb-lg-4p"><b>Section 2</b></h5>
-{#                                                                <label>Site URL</label>#}
-                                                                {{ form.site_url | as_crispy_field }}
-{#                                                                <label>Choose images for you slideshow</label>#}
-                                                                <label>Section 2 Image</label>
-                                                                    {{ form.about_img }}
-                                                                <label>About Text</label>
-                                                                    {{ form.about_title }}
-                                                                <label for="">About Brief</label>
-                                                                    {{ form.about }}
-{#                                                                <input type="file" name="image" class="form-control" />#}
-{#                                                                <input type="file" name="image" class="form-control" />#}
-{#                                                                <input type="file" name="image" class="form-control" />#}
+                                                                <h5 class="mb-lg-4p"><b>Header</b></h5>
+                                                                {{ form.site_url }}
+                                                                <label>Title *</label>
+                                                                    {{ form.title }}
+                                                                    {{ form.img_logo }}
+                                                                <label>Background *</label>
+                                                                    {{ form.img_background1 }}
+                                                                    {{ form.img_background2 }}
+                                                                    {{ form.img_background3 }}
                                                             </div>
                                                             <a class="btn-whiteoutline prev-step mb-lg-4p">Previous Step</a>
                                                             <a class="btn-rectangle next-step">Next Step</a>
@@ -101,21 +91,21 @@
                                                 <div class="container-fluid">
                                                     <div class="row">
                                                         <div class="col-lg-7">
-                                                            <img class="img-fluid w-lg-100p" src="images/edit-template-image-02.png" alt="reservasidulu" />
+                                                            <img class="img-fluid w-lg-100p" src="{% static 'img/edit-template-image-02.png' %}" alt="reservasidulu" />
                                                         </div>
                                                         <div class="col-lg-5">
                                                             <div class="form-wrap">
                                                                 <h5 class="mb-lg-4p"><b>Our Story</b></h5>
                                                                 <label>Choose images for story section</label>
-                                                                <input type="file" name="image" class="form-control" />
-                                                                <input type="file" name="image" class="form-control" />
-                                                                <input type="file" name="image" class="form-control mb-lg-4p" />
-                                                                <label>Quotes*</label>
-                                                                <input type="text" name="input_name" class="form-control" />
-                                                                <label>Quotes by*</label>
-                                                                <input type="text" name="input_name" class="form-control" />
+                                                                    {{ form.about_img1 }}
+                                                                    {{ form.about_img2 }}
+                                                                <label>About title*</label>
+                                                                {{ form.about_title }}
+                                                                <label>Quotes by</label>
+                                                                {{ form.about_quote }}
+                                                                {{ form.about_quote_by }}
                                                                 <label>Our Story</label>
-                                                                <textarea name="ourstory" class="form-control" rows="8"></textarea>
+                                                                {{ form.about }}
                                                             </div>
                                                             <a class="btn-whiteoutline prev-step mb-lg-4p">Previous Step</a>
                                                             <a class="btn-rectangle next-step">Next Step</a>
@@ -127,57 +117,33 @@
                                                 <div class="container-fluid">
                                                     <div class="row">
                                                         <div class="col-lg-7">
-                                                            <img class="img-fluid w-lg-100p" src="images/edit-template-image-03.png" alt="reservasidulu" />
+                                                            <img class="img-fluid w-lg-100p" src="{% static 'img/edit-template-image-03.png' %}" alt="reservasidulu" />
                                                         </div>
                                                         <div class="col-lg-5">
                                                             <div class="form-wrap">
                                                                 <h5 class="mb-lg-4p"><b>Date, Time, and Place</b></h5>
                                                                 <label>Ceremony</label>
                                                                 <div class="line-lightgrey w-lg-100p mt-lg-3p mb-lg-5p"></div>
-                                                                <input type="file" name="image" class="form-control mb-lg-4p" />
+                                                                {{ form.ceremony_img }}
                                                                 <label>Date and Time*</label>
                                                                 <div class="form-row mb-lg-4p">
                                                                     <div class="col-lg-6">
-                                                                        <input type="date" name="dateandtime" class="form-control" />
-                                                                    </div>
-                                                                    <div class="col-lg-6">
-                                                                        <select class="form-control">
-                                                                            <option>06:00</option>
-                                                                            <option>07:00</option>
-                                                                            <option>08:00</option>
-                                                                            <option>09:00</option>
-                                                                            <option>10:00</option>
-                                                                            <option>11:00</option>
-                                                                            <option>12:00</option>
-                                                                        </select>
+                                                                        {{ form.ceremony_time }}
                                                                     </div>
                                                                 </div>
                                                                 <label>Location</label>
-                                                                <textarea name="ourstory" class="form-control mb-lg-10p" rows="5"></textarea>
+                                                                {{ form.ceremony_location }}
                                                                 <label>Reception</label>
                                                                 <div class="line-lightgrey w-lg-100p mt-lg-3p mb-lg-5p"></div>
-                                                                <input type="file" name="image" class="form-control mb-lg-4p" />
+                                                                {{ form.reception_img }}
                                                                 <label>Date and Time*</label>
                                                                 <div class="form-row mb-lg-4p">
                                                                     <div class="col-lg-6">
-                                                                        <input type="date" name="dateandtime" class="form-control" />
-                                                                    </div>
-                                                                    <div class="col-lg-6">
-                                                                        <select class="form-control">
-                                                                            <option>12:00</option>
-                                                                            <option>13:00</option>
-                                                                            <option>14:00</option>
-                                                                            <option>15:00</option>
-                                                                            <option>16:00</option>
-                                                                            <option>17:00</option>
-                                                                            <option>18:00</option>
-                                                                            <option>19:00</option>
-                                                                            <option>20:00</option>
-                                                                        </select>
+                                                                        {{ form.reception_time }}
                                                                     </div>
                                                                 </div>
                                                                 <label>Location</label>
-                                                                <textarea name="ourstory" class="form-control" rows="5"></textarea>
+                                                                {{ form.reception_location }}
                                                             </div>
                                                             <a class="btn-whiteoutline prev-step mb-lg-4p">Previous Step</a>
                                                             <a class="btn-rectangle next-step">Next Step</a>
@@ -189,20 +155,16 @@
                                                 <div class="container-fluid">
                                                     <div class="row">
                                                         <div class="col-lg-7">
-                                                            <img class="img-fluid w-lg-100p" src="images/edit-template-image-04.png" alt="reservasidulu" />
+                                                            <img class="img-fluid w-lg-100p" src="{% static 'img/edit-template-image-04.png' %}" alt="reservasidulu" />
                                                         </div>
                                                         <div class="col-lg-5">
                                                             <div class="form-wrap">
                                                                 <h5 class="mb-lg-4p"><b>Photo Gallery</b></h5>
                                                                 <label>Choose images for gallery section</label>
-                                                                <input type="file" name="image" class="form-control" />
-                                                                <input type="file" name="image" class="form-control" />
-                                                                <input type="file" name="image" class="form-control" />
-                                                                <input type="file" name="image" class="form-control" />
-                                                                <input type="file" name="image" class="form-control" />
-                                                                <input type="file" name="image" class="form-control" />
-                                                                <input type="file" name="image" class="form-control" />
-                                                                <input type="file" name="image" class="form-control" />
+                                                                {{ form.gallery1 }}
+                                                                {{ form.gallery2 }}
+                                                                {{ form.gallery3 }}
+                                                                {{ form.gallery4 }}
                                                             </div>
                                                             <a class="btn-whiteoutline prev-step mb-lg-4p">Previous Step</a>
                                                             <a class="btn-rectangle next-step">Next Step</a>
@@ -214,18 +176,18 @@
                                                 <div class="container-fluid">
                                                     <div class="row">
                                                         <div class="col-lg-7">
-                                                            <img class="img-fluid w-lg-100p" src="images/edit-template-image-05.png" alt="reservasidulu" />
+                                                            <img class="img-fluid w-lg-100p" src="{% static 'img/edit-template-image-05.png' %}" alt="reservasidulu" />
                                                         </div>
                                                         <div class="col-lg-5">
                                                             <div class="form-wrap">
                                                                 <h5 class="mb-lg-4p"><b>RSVP</b></h5>
                                                                 <label>Choose images for RSVP Section</label>
-                                                                <input type="file" name="image" class="form-control mb-lg-4p" />
+                                                                {{ form.rsvp_img }}
                                                                 <label>RSVP Copy</label>
                                                                 <textarea name="ourstory" class="form-control" rows="8"></textarea>
                                                             </div>
                                                             <a class="btn-whiteoutline prev-step mb-lg-4p">Previous Step</a>
-                                                            <input type="submit" class="btn-rectangle" value="Save & Preview">
+                                                            <button type="submit" class="btn-rectangle"> Submit</button>
                                                         </div>
                                                     </div>
                                                 </div>
