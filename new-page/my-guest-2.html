@@ -24,12 +24,12 @@
     <nav id="navigation" class="account fadein">
         <div class="container-fluid pt-lg-20 pb-lg-20 pl-lg-5p pr-lg-5p">
             <div class="row">
-                <div class="col-lg-9 nav-accountlogo pt-lg-20">
+                <div class="col-lg-9 d-none d-lg-block nav-accountlogo pt-lg-20">
                     <a href="index.html"><img class="logo" src="images/logo.png" alt="reservasidulu"></a>
                     <div class="line"></div>
                     <h5><b>My Account</b></h5>
                 </div>
-                <div class="col-lg-3 pl-lg-0 nav-account pt-lg-10">
+                <div class="col-lg-3 d-none d-lg-block pl-lg-0 nav-account pt-lg-10">
                     <div class="row">
                         <div class="offset-lg-2 col-lg-7 line">
                             <h5><b>sf_mariastefani</b></h5>
@@ -41,13 +41,82 @@
                     </div>
                 </div>
             </div>
+            <div class="row d-lg-none navigation-mobile">
+                <div class="col-8">
+                    <a href="index.html"><img class="logo" src="images/logo.png" alt="reservasidulu"></a>
+                </div>
+                <div class="col-4 bars">
+                    <div id="toggle">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </div>
+                    <h5><b>Menu</b></h5>
+                </div>
+                <div class="side-nav">
+                    <img class="img-fluid close-icon" src="images/close.png" />
+                    <div class="profile">
+                        <h5><b>sf_mariastefani</b></h5>
+                        <p>Stefani Maria</p>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="">My Template</a></li>
+                            <li><a class="active" href="">My Guest</a></li>
+                            <li><a href="">Profile</a></li>
+                            <li><a href="">Login Info</a></li>
+                            <li><a href="">Log Out</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn-rectangle" href="">Back To Home</a>
+                </div>
+            </div>
         </div>
+        <img class="navline" src="images/mobile/nav-line.png" />
     </nav>
     <!-- Main -->
+    <style type="text/css">
+        .my-guest-content .table-attending .card{
+          padding: 4%;
+          height: 640px;
+          overflow-y: auto;
+        }
+        .my-guest-content .table-notattending .card,
+        .my-guest-content .table-gift .card{
+          padding: 4%;
+          overflow-y: auto;
+        }
+        @media screen and (max-width: 846px) {
+            .user-content h3{
+                margin-bottom: 7% !important;
+                font-size: 30px !important;
+            }
+            /* User Content Info */
+            .my-guest-content .info{margin: 10% 0;}
+            .my-guest-content .info a{font-size: 10px !important;}
+            .my-guest-content .info .line{
+                margin: 10% 0;
+                width: 100%;
+                border-bottom: 1px solid #c6c6c6;
+            }
+            .my-guest-content .info .subtitle{
+                margin-bottom: 1% !important;
+                font-size: 16px !important;
+            }
+            .my-guest-content .info .header-attending{border-right: unset;}
+            .my-guest-content .info .header-attending .num{
+                font-size: 45px;
+                line-height: 45px;
+            }
+            .my-guest-content .info .header-attending .titletable{margin-bottom: 5% !important;}
+            .my-guest-content .info .header-attending table{width: 100%;}
+            .my-guest-content .info .header-attending table tr td:last-child{text-align: right;}
+        }
+    </style>
     <div id="main-templates">
         <!-- Section User Navigation -->
         <div class="navspace"></div>
-        <div class="container-fluid pos-rel user-navigation pl-lg-5p pr-lg-5p">
+        <div class="container-fluid pos-rel user-navigation d-none d-lg-block pl-lg-5p pr-lg-5p">
             <div class="row">
                 <div class="col-lg-12">
                     <ul>
@@ -60,22 +129,22 @@
             </div>
         </div>
         <!-- Section User Content -->
-        <div class="container-fluid pos-rel user-content my-guest-content pt-lg-5p pl-lg-5p pr-lg-5p bg-lightgrey">
+        <div class="container-fluid pos-rel user-content my-guest-content pt-lg-5p pl-lg-5p pr-lg-5p pt-m-30p pl-m-10p pr-m-10p bg-lightgrey">
             <div class="row">
                 <div class="col-lg-12">
                     <h3 class="mb-lg-2p">My Guest</h3>
                     <div class="w-lg-100p line-lightgrey"></div>
                 </div>
                 <!-- Header Info -->
-                <div class="col-lg-12 info">
+                <div class="col-lg-12 info pl-m-0 pr-m-0">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-lg-6 pl-lg-0 pr-lg-5p header-attending">
+                            <div class="col-lg-6 d-none d-lg-block pl-lg-0 pr-lg-5p header-attending">
                                 <h3>Attending</h3>
                                 <div class="num">2304</div>
                                 <a href="">See who’s attending</a>
                             </div>
-                            <div class="col-lg-6 pl-lg-5p pr-lg-0 sna">
+                            <div class="col-lg-6 d-none d-lg-block pl-lg-5p pr-lg-0 sna">
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-lg-12 submitted">
@@ -99,10 +168,63 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-6 d-block d-lg-none header-attending">
+                                <h3 class="subtitle">Attending</h3>
+                            </div>
+                            <div class="col-6 d-block d-lg-none header-attending text-right">
+                                <div class="num">2304</div>
+                                <a href="">See who’s attending</a>
+                            </div>
+                            <div class="col-12 d-block d-lg-none"><div class="line"></div></div>
+                            <div class="col-8 d-block d-lg-none header-attending">
+                                <h3 class="subtitle">RSVP Submitted</h3>
+                                <a href="">See who’ve submitted</a>
+                            </div>
+                            <div class="col-4 d-block d-lg-none header-attending text-right">
+                                <h3 class="num-sm"><span>1907</span></h3>
+                            </div>
+                            <div class="col-12 d-block d-lg-none"><div class="line"></div></div>
+                            <div class="col-8 d-block d-lg-none header-attending">
+                                <h3 class="subtitle">Not Attending</h3>
+                                <a href="">See who’s not attending</a>
+                            </div>
+                            <div class="col-4 d-block d-lg-none header-attending text-right">
+                                <h3 class="num-sm"><span>9</span></h3>
+                            </div>
+                            <div class="col-12 d-block d-lg-none"><div class="line"></div></div>
+                            <div class="col-6 d-block d-lg-none header-attending">
+                                <h3 class="subtitle">Estimated Gift Receive</h3>
+                            </div>
+                            <div class="col-6 d-block d-lg-none header-attending text-right">
+                                <div class="num">1076</div>
+                                <a href="">See who give me gift</a>
+                            </div>
+                            <div class="col-12 d-block d-lg-none"><div class="line"></div></div>
+                            <div class="col-12 d-block d-lg-none header-attending">
+                                <h3 class="subtitle titletable">Top Chosen Gift</h3>
+                                <table>
+                                    <tr>
+                                        <td><h5><b>Dresses</b></h5></td>
+                                        <td><h5><b>60</b></h5></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h5><b>Shoes</b></h5></td>
+                                        <td><h5><b>35</b></h5></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h5><b>Snacks</b></h5></td>
+                                        <td><h5><b>21</b></h5></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h5><b>Tumblr</b></h5></td>
+                                        <td><h5><b>7</b></h5></td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                    <div class="w-lg-100p line-lightgrey mt-lg-3p mb-lg-3p"></div>
-                    <div class="container-fluid">
+                    <div class="d-none d-lg-block w-lg-100p line-lightgrey mt-lg-3p mb-lg-3p"></div>
+                    <div class="container-fluid d-none d-lg-block">
                         <div class="row">
                             <div class="col-lg-6 pl-lg-0 pr-lg-5p header-attending">
                                 <h3>Estimated Gift Receive</h3>
@@ -134,8 +256,8 @@
                     </div>
                 </div>
                 <!-- Table Attending -->
-                <div class="col-lg-12 table-attending mb-lg-3p">
-                    <div class="w-lg-100p line-lightgrey mb-lg-3p"></div>
+                <div class="col-lg-12 table-attending mb-lg-3p mb-m-20p">
+                    <div class="w-lg-100p line-lightgrey mb-lg-3p mb-m-20p"></div>
                     <h3 class="mb-lg-2p">Attending</h3>
                     <div class="card">
                         <table class="table my-guest-table">
@@ -224,7 +346,7 @@
                     </div>
                 </div>
                 <!-- Table Not Attending -->
-                <div class="col-lg-12 table-notattending mb-lg-3p">
+                <div class="col-lg-12 table-notattending mb-lg-3p mb-m-20p">
                     <h3 class="mb-lg-2p">Not Attending</h3>
                     <div class="card">
                         <table class="table my-guest-table">
@@ -354,21 +476,48 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid pl-lg-5p pr-lg-5p">
+            <div class="container-fluid pl-lg-5p pr-lg-5p pl-m-10p pr-m-10p">
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 mb-lg-5p mb-m-15p">
                         <a href="index.html"><img class="img-fluid logo" src="images/logo-white.png" alt="reservasidulu"></a>
                     </div>
-                    <div class="col-lg-6 pl-lg-0">
+                    <div class="col-12 d-block d-lg-none mb-lg-5p">
+                        <ul class="mobile-menu">
+                            <li>
+                                <a class="menu-collapse collapsed" data-toggle="collapse" href="#collapsefooter1" role="button" aria-expanded="false" aria-controls="collapsefooter1">Explore Us</a>
+                                <div class="collapse" id="collapsefooter1">
+                                    <ul>
+                                        <li><a href="why-us.html">About</a></li>
+                                        <li><a href="tour.html">How-to</a></li>
+                                        <li><a href="index.html#price">Pricing</a></li>
+                                        <li><a href="templates.html">Templates</a></li>
+                                        <li><a href="index.html">Terms and Conditions</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="menu-collapse collapsed" data-toggle="collapse" href="#collapsefooter2" role="button" aria-expanded="false" aria-controls="collapsefooter2">Connect With Us</a>
+                                <div class="collapse" id="collapsefooter2">
+                                    <ul>
+                                        <li><a href="templates-wedding.html">Blog</a></li>
+                                        <li><a href="contact-us.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 pl-lg-0 mb-m-10p pl-m-15">
                         <div class="brief w-lg-100p">
                             <p>
-                                E: <a href="mailto:hello@reservasidulu.com">hello@reservasidulu.com</a><br>
+                                E: <a href="mailto:hello@reservasidulu.com">hello@reservasidulu.com</a>
+                            </p>
+                            <p class="d-none d-lg-block">
                                 © 2020 ReservasiDulu.com All Rights Reserved
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <ul class="social">
+                        <ul class="social mb-m-10p">
                             <li>
                                 <a target="_blank" href="https://twitter.com/"><img src="images/icon-twitter.png"></a>
                             </li>
@@ -379,10 +528,13 @@
                                 <a target="_blank" href="https://www.instagram.com/"><img src="images/icon-ig.png"></a>
                             </li>
                         </ul>
+                        <p class="d-block d-lg-none mb-m-15p">
+                            © 2020 ReservasiDulu.com All Rights Reserved
+                        </p>
                     </div>
                 </div>
             </div>
-            <img class="background" src="images/background-footer.png">
+            <img class="background d-none d-lg-block" src="images/background-footer.png">
         </div>
     </footer>
 
