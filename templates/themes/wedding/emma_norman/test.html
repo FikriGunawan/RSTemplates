@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Bootstrap 4 Step Wizard</title>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <style type="text/css">
+        /*---------signup-step-------------*/
+            .wizard .wizard-inner .nav-tabs{
+                position: relative;
+                margin-bottom: 0;
+                border-bottom-color: transparent;
+            }
+            .wizard .wizard-inner{
+                position: relative;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+            .wizard .wizard-inner .nav-tabs li.active a,
+            .wizard .wizard-inner .nav-tabs li.active a:hover,
+            .wizard .wizard-inner .nav-tabs li.active a:focus{
+                color: #555555;
+                cursor: default;
+                border: 0;
+                border-bottom-color: transparent;
+            }
+            .wizard .wizard-inner .nav-tabs li a span.round-tab{
+                width: 15px;
+                height: 15px;
+                line-height: 30px;
+                display: inline-block;
+                border-radius: 50%;
+                background: #ededed;
+                z-index: 2;
+                position: absolute;
+                left: 0;
+                text-align: center;
+                font-size: 16px;
+                color: #0e214b;
+                font-weight: 500;
+            }
+            .wizard .wizard-inner .nav-tabs li.active a span.round-tab{
+                background: #808285;
+                color: #fff;
+                border-color: #808285;
+            }
+            .wizard .nav-tabs > li{width: 40px;}
+            .wizard li:after{
+                content: " ";
+                position: absolute;
+                left: 46%;
+                opacity: 0;
+                margin: 0 auto;
+                bottom: 0px;
+                border: 5px solid transparent;
+                border-bottom-color: red;
+                transition: 0.1s ease-in-out;
+            }
+            .wizard .nav-tabs > li a{
+                width: 30px;
+                height: 30px;
+                margin: 20px auto;
+                border-radius: 100%;
+                padding: 0;
+                background-color: transparent;
+                position: relative;
+                top: 0;
+            }
+            .wizard .nav-tabs > li a i{
+                position: absolute;
+                top: -15px;
+                font-style: normal;
+                font-weight: 400;
+                white-space: nowrap;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 12px;
+                font-weight: 700;
+                color: #000;
+            }
+            .wizard .nav-tabs > li a:hover{background: transparent;}
+            .wizard .tab-pane{
+                position: relative;
+                padding-top: 20px;
+            }
+            .wizard h3{margin-top: 0;}
+            .prev-step,
+            .next-step{
+                font-size: 13px;
+                padding: 8px 24px;
+                border: none;
+                border-radius: 4px;
+                margin-top: 30px;
+            }
+            .next-step{background-color: #0db02b;}
+            .skip-btn{background-color: #cec12d;}
+            .step-head{
+                font-size: 20px;
+                text-align: center;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+            .term-check{
+                font-size: 14px;
+                font-weight: 400;
+            }
+            .custom-file{
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                height: 40px;
+                margin-bottom: 0;
+            }
+            .custom-file-input{
+                position: relative;
+                z-index: 2;
+                width: 100%;
+                height: 40px;
+                margin: 0;
+                opacity: 0;
+            }
+            .custom-file-label{
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                z-index: 1;
+                height: 40px;
+                padding: .375rem .75rem;
+                font-weight: 400;
+                line-height: 2;
+                color: #495057;
+                background-color: #fff;
+                border: 1px solid #ced4da;
+                border-radius: .25rem;
+            }
+            .custom-file-label::after{
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 3;
+                display: block;
+                height: 38px;
+                padding: .375rem .75rem;
+                line-height: 2;
+                color: #495057;
+                content: "Browse";
+                background-color: #e9ecef;
+                border-left: inherit;
+                border-radius: 0 .25rem .25rem 0;
+            }
+            .footer-link{margin-top: 30px;}
+            .all-info-container{}
+            .list-content{margin-bottom: 10px;}
+            .list-content a{
+                padding: 10px 15px;
+                width: 100%;
+                display: inline-block;
+                background-color: #f5f5f5;
+                position: relative;
+                color: #565656;
+                font-weight: 400;
+                border-radius: 4px;
+            }
+            .list-content a[aria-expanded="true"] i{transform: rotate(180deg);}
+            .list-content a i{
+                text-align: right;
+                position: absolute;
+                top: 15px;
+                right: 10px;
+                transition: 0.5s;
+            }
+            .form-control[disabled],
+            .form-control[readonly],
+            fieldset[disabled] .form-control{background-color: #fdfdfd;}
+            .list-box{padding: 10px;}
+            .signup-logo-header .logo_area{width: 200px;}
+            .signup-logo-header .nav > li{padding: 0;}
+            .signup-logo-header .header-flex{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .list-inline li{display: inline-block;}
+            .pull-right{float: right;}
+    </style>
+</head>
+<body>
+
+
+
+    <div class="container-fluid templates-steps pt-lg-5">
+        <div class="row">
+            <div class="col-lg-12">
+                    <div class="wizard">
+                        <div class="wizard-inner">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" aria-expanded="true"><span class="round-tab"></span></a>
+                                </li>
+                                <li role="presentation" class="disabled">
+                                    <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" aria-expanded="false"><span class="round-tab"></span></a>
+                                </li>
+                                <li role="presentation" class="disabled">
+                                    <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab"><span class="round-tab"></span></a>
+                                </li>
+                                <li role="presentation" class="disabled">
+                                    <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab"><span class="round-tab"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <form role="form" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="tab-content" id="main_form">
+                                <div class="tab-pane active" role="tabpanel" id="step1">
+                                    <h4 class="text-center">Step 1</h4>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Site Url *</label>
+                                                {{ form.site_url }}
+{#                                                <input class="form-control" type="text" name="name" placeholder="">#}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Title  *</label>
+                                                {{ form.title }}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Img Logo *</label>
+                                                {{ form.img_logo }}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Password *</label>
+                                                {{ form.img_background }}
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <ul class="list-inline pull-right">
+                                        <li><button type="button" class="default-btn next-step">Continue to next step</button></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane" role="tabpanel" id="step2">
+                                    <h4 class="text-center">Step 2</h4>
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>About img *</label>
+                                            {{ form.about_img }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>About Title</label>
+                                            {{ form.about_title }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>About *</label>
+                                            {{ form.about }}
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Registration No.</label>
+                                            {{ form.ceremony_img }}
+                                        </div>
+                                    </div>
+                                   </div>
+
+
+                                    <ul class="list-inline pull-right">
+                                        <li><button type="button" class="default-btn prev-step">Back</button></li>
+                                        <li><button type="button" class="default-btn next-step skip-btn">Skip</button></li>
+                                        <li><button type="button" class="default-btn next-step">Continue</button></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane" role="tabpanel" id="step3">
+                                    <h4 class="text-center">Step 3</h4>
+                                     <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Ceremony Time</label>
+                                            {{ form.ceremony_time }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Ceremony Location</label>
+                                            {{ form.ceremony_location }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Reception Img</label>
+                                            {{ form.reception_img }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>waktu resepsi </label>
+                                                {{ form.reception_time }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>lokasi resepsi</label>
+                                            {{ form.reception_location }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Input Number</label>
+                                            {{ form.galley_text }}
+                                        </div>
+                                    </div>
+                                       </div>
+                                    <ul class="list-inline pull-right">
+                                        <li><button type="button" class="default-btn prev-step">Back</button></li>
+                                        <li><button type="button" class="default-btn next-step skip-btn">Skip</button></li>
+                                        <li><button type="button" class="default-btn next-step">Continue</button></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane" role="tabpanel" id="step4">
+                                    <h4 class="text-center">Step 4</h4>
+                                    <div class="all-info-container">
+                                        <div class="list-content">
+                                            <a href="#listone" data-toggle="collapse" aria-expanded="false" aria-controls="listone">Collapse 1 <i class="fa fa-chevron-down"></i></a>
+                                            <div class="collapse" id="listone">
+                                                <div class="list-box">
+                                                    <div class="row">
+
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Gallery</label>
+                                                                    {{ form.gallery1 }}
+                                                                    {{ form.gallery2 }}
+                                                                    {{ form.gallery3 }}
+                                                                    {{ form.gallery4 }}
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Phone Number *</label>
+                                                                <input class="form-control" type="text" name="name" placeholder="" disabled="disabled">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-content">
+                                            <a href="#listtwo" data-toggle="collapse" aria-expanded="false" aria-controls="listtwo">Collapse 2 <i class="fa fa-chevron-down"></i></a>
+                                            <div class="collapse" id="listtwo">
+                                                <div class="list-box">
+                                                    <div class="row">
+
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Address 1 *</label>
+                                                                <input class="form-control" type="text" name="name" placeholder="" disabled="disabled">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>City / Town *</label>
+                                                                <input class="form-control" type="text" name="name" placeholder="" disabled="disabled">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Country *</label>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Legal Form</label>
+                                                                <select name="legalform2" class="form-control" id="legalform2" disabled="disabled">
+                                                                    <option value="" selected="selected">-Select an Answer-</option>
+                                                                    <option value="AG">Limited liability company</option>
+                                                                    <option value="GmbH">Public Company</option>
+                                                                    <option value="GbR">No minimum capital, unlimited liability of partners, non-busines</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Business Registration No.</label>
+                                                                <input class="form-control" type="text" name="name" placeholder="" disabled="disabled">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Registered</label>
+                                                                <select name="vat2" class="form-control" id="vat2" disabled="disabled">
+                                                                    <option value="" selected="selected">-Select an Answer-</option>
+                                                                    <option value="yes">Yes</option>
+                                                                    <option value="no">No</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Seller</label>
+                                                                <input class="form-control" type="text" name="name" placeholder="" disabled="disabled">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label>Company Name *</label>
+                                                                <input class="form-control" type="password" name="name" placeholder="" disabled="disabled">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-content">
+                                            <a href="#listthree" data-toggle="collapse" aria-expanded="false" aria-controls="listthree">Collapse 3 <i class="fa fa-chevron-down"></i></a>
+                                            <div class="collapse" id="listthree">
+                                                <div class="list-box">
+                                                    <div class="row">
+
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Name *</label>
+                                                                <input class="form-control" type="text" name="name" placeholder="">
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Number *</label>
+                                                                <input class="form-control" type="text" name="name" placeholder="">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <ul class="list-inline pull-right">
+                                        <li><button type="button" class="default-btn prev-step">Back</button></li>
+                                        <input type="submit">
+{#                                        <li><button type="button" class="default-btn next-step">Finish</button></li>#}
+                                    </ul>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+    <script type="text/javascript">
+        // ------------step-wizard-------------
+        $(document).ready(function () {
+            $('.nav-tabs > li a[title]').tooltip();
+
+            //Wizard
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+
+                var target = $(e.target);
+
+                if (target.parent().hasClass('disabled')) {
+                    return false;
+                }
+            });
+
+            $(".next-step").click(function (e) {
+
+                var active = $('.wizard .nav-tabs li.active');
+                active.next().removeClass('disabled');
+                nextTab(active);
+
+            });
+            $(".prev-step").click(function (e) {
+
+                var active = $('.wizard .nav-tabs li.active');
+                prevTab(active);
+
+            });
+        });
+
+        function nextTab(elem) {
+            $(elem).next().find('a[data-toggle="tab"]').click();
+        }
+        function prevTab(elem) {
+            $(elem).prev().find('a[data-toggle="tab"]').click();
+        }
+
+
+        $('.nav-tabs').on('click', 'li', function() {
+            $('.nav-tabs li.active').removeClass('active');
+            $(this).addClass('active');
+        });
+    </script>
+
+</body>
+</html>

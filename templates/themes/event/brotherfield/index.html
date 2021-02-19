@@ -6,24 +6,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">   
-    <title>Template Event | Homepage</title>
-    <link rel="shortcut icon" href="{% static 'rsvp/event/brotherfield/images/ico.ico' %}">
+    <title>Template Grand Opening | Homepage</title>
+    <link rel="shortcut icon" href="images/ico.ico">
     <!-- Customize css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/animation.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'rsvp/event/brotherfield/style_grand_opening.css' %}">
-    <link rel="stylesheet" href="{% static 'features/animatecss/animate.min.css' %}">
-    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'node_modules/font-awesome/css/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static 'node_modules/owl.carousel/dist/assets/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'node_modules/owl.carousel/dist/assets/owl.theme.default.min.css' %}">
+    {% compress css %}
+        {% include 'static/css.html' %}
+        <link rel="stylesheet" type="text/css" href="{% static 'rsvp/event/brotherfield/style_grand_opening.css' %}">
+    {% endcompress %}
+    <!-- Features css -->
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Preview Navigation -->
-    {% include 'themes/poni.html' %}
-    
-    <!-- Main Site -->    
     <div class="nav-opening">
         <div class="container-fluid">
             <div class="row d-none d-lg-flex">
@@ -64,16 +58,16 @@
                             </a>
                         </li>
                         <li class="mx-2">
-                            <a href="https://www.instagram.com/{{ x.instagram }}/">
+                            <a href="#">
                                 <strong>
-                                    <i class="fa fa-instagram"></i> @{{ x.instagram }}
+                                    <i class="fa fa-instagram"></i> @BROTHERFIELD.JKT
                                 </strong>
                             </a>
                         </li>
                         <li class="mx-2">
-                            <a href="https://web.whatsapp.com/send?phone={{ x.wa }}&amp;source&amp;data">
+                            <a href="#">
                                 <strong>
-                                    <i class="fa fa-whatsapp"></i> {{ x.wa }}
+                                    <i class="fa fa-whatsapp"></i> 08123456789
                                 </strong>
                             </a>
                         </li>
@@ -125,9 +119,9 @@
         <div class="row">
             <div class="col-lg-7 px-0">
                     <div class="logo">
-                        <img data-aos="fade-down" src="{{img}}{{x.img_logo}}">
+                        <img data-aos="fade-down" src="images/logo-04.png">
                     </div>
-                <img data-aos="zoom-out" class="img-fluid w-100" src="{{img}}{{x.banner_image}}">                
+                <img data-aos="zoom-out" class="img-fluid w-100" src="images/image-header-03.jpg">                
             </div>
             <div class="col-lg-5 header-right pt-lg-5 pl-lg-5">
                 <div data-aos="fade-left">
@@ -142,7 +136,7 @@
                     Grand Opening
                 </h1>
                 <h1 class="text-yellow font-50-px ml-4 mt-lg-5 mt-4 mb-5">
-                    <span>FIRST</span> <span class="middle">IN</span> <span>{{ x.banner_city }}</span>
+                    <span>FIRST</span> <span class="middle">IN</span> <span>JAKARTA</span>
                 </h1>
                 </div>
             </div>
@@ -153,22 +147,29 @@
             <div class="col-lg-7 brief-left">
                 <div class="content">
                     <h1 data-aos="fade-right" class="text-white font-50-px mb-4">
-                        {{ x.about_title }}
+                        We’re Coming<br>
+                        From Melbourne!
                     </h1>
-                    <div data-aos="fade-right" class="font-white ml-lg-5 pl-lg-5">
-                        {{ x.about_brief }}
-                    </div>
+                    <p data-aos="fade-right" class="text-white ml-lg-5 pl-lg-5">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                        est laborum.
+                    </p>
                 </div>
             </div>
             <div class="col-lg-5 bg-coral">
                 <div class="row">
                     <div class="col-lg-12 p-lg-4 pb-5 px-4">
-                        <img data-aos="fade-zoom-in" class="img-fluid mx-auto d-block" src="{{img}}{{x.about_image1}}">
+                        <img data-aos="fade-zoom-in" class="img-fluid mx-auto d-block" src="images/brief-image-right-05.jpg">
                     </div>
                 </div>
                 <div class="row d-none d-lg-block">
                     <div class="col-lg-12 p-0">
-                        <img data-aos="fade-up" class="img-fluid w-100" src="{{img}}{{x.about_image2}}">
+                        <img data-aos="fade-up" class="img-fluid w-100" src="images/brief-image-right-two-06.jpg">
                     </div>
                 </div>
             </div>
@@ -182,11 +183,11 @@
                         <div class="row">
                             <div class="col-lg-5 px-lg-0 px-4">
                                 <h1 class="text-white font-50-px mb-lg-0 mb-4">
-                                    {{ x.venue_date }}
+                                    06 July 2020
                                 </h1>
                             </div>
                             <div class="col-lg-1 d-none d-lg-block">
-                                <img src="{% static 'rsvp/event/brotherfield/images/vertical-line-countdown-06.png' %}">
+                                <img src="images/vertical-line-countdown-06.png">
                             </div>
                             <div class="col-lg-5 px-0 d-none d-lg-block">
                                 <h2 class="text-white mt-lg-2">
@@ -238,21 +239,23 @@
     <div class="container-fluid venue">
         <div class="row">
             <div class="col-lg-7 p-0 order-2 order-lg-1">
-                {{ x.venue_maps }}
-                {#<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1030.4485225146113!2d106.8044447315476!3d-6.252064872614094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f170ed30b127%3A0x4db4afc1ef4beb2e!2sThe%20Dharmawangsa%2C%20Jl.%20Dharmawangsa%20VIII%20No.26%2C%20RT.1%2FRW.2%2C%20Pulo%2C%20Kec.%20Kby.%20Baru%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012160!5e0!3m2!1sen!2sid!4v1590471554546!5m2!1sen!2sid" class="img-fluid w-100" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>#}
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1030.4485225146113!2d106.8044447315476!3d-6.252064872614094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f170ed30b127%3A0x4db4afc1ef4beb2e!2sThe%20Dharmawangsa%2C%20Jl.%20Dharmawangsa%20VIII%20No.26%2C%20RT.1%2FRW.2%2C%20Pulo%2C%20Kec.%20Kby.%20Baru%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012160!5e0!3m2!1sen!2sid!4v1590471554546!5m2!1sen!2sid" class="img-fluid w-100" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
             <div class="col-lg-5 right-content order-1 order-lg-2">
                 <h1 data-aos="fade-left" class="text-white font-50-px mt-5">
-                    <span>{{ x.venue_start }}</span> <span class="middle">to</span> <span>{{ x.venue_end }}</span>
+                    <span>17.00 PM</span> <span class="middle">to</span> <span>22.00 PM</span>
                 </h1>
                 <p data-aos="fade-left" class="font-weight-bold text-white mt-lg-5 mt-4">
-                    {{ x.venue_at }}
+                    AT BROTHERFIELD<br>
+                    DHARMAWANGSA
                 </p>
                 <p data-aos="fade-left" class="text-white">
-                    {{ x.venue_address }}
+                    Jl. Dharmawangsa Raya No. 23, Pulo<br>
+                    Kec. Kby. Baru Kota Jakarta Selatan<br>
+                    Daerah Khusus Ibukota Jakarta 12160<br>
                 </p>
                 <p data-aos="fade-left" class="text-white font-weight-bold">
-                    DRESSCODE: {{ x.venue_dress }}
+                    DRESSCODE: CASUAL, JUST BE YOURSELF!
                 </p>
             </div>
         </div>
@@ -262,18 +265,18 @@
             <div class="col-lg-7  order-2 order-lg-1">
                 <div class="row">
                     <div class="col-6 p-0">
-                        <img data-aos="zoom-out" class="img-full" src="{{img}}{{x.menus_image1}}">
+                        <img data-aos="zoom-out" class="img-full" src="images/menus-11.jpg">
                     </div>
                     <div class="col-6 p-4 bg-blue text-center">
-                        <img data-aos="fade-left" class="img-fluid" src="{{img}}{{x.menus_image2}}">
+                        <img data-aos="fade-left" class="img-fluid" src="images/menus-12.jpg">
                     </div>
                 </div>
                 <div class="row d-none d-lg-flex">
                     <div class="col-lg-6 bg-coral text-center">
-                        <img data-aos="fade-right" class="img-fluid" src="{{img}}{{x.menus_image3}}">
+                        <img data-aos="fade-right" class="img-fluid" src="images/menus-13.jpg">
                     </div>
                     <div class="col-lg-6 p-0">
-                        <img data-aos="zoom-out" class="img-full" src="{{img}}{{x.menus_image4}}">
+                        <img data-aos="zoom-out" class="img-full" src="images/menus-14.jpg">
                     </div>
                 </div>
             </div>
@@ -299,14 +302,42 @@
                         <div class="border-content">
                         <div class="tab-content" id="pills-tabContent">
                           <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                                <div class="font-white">
-                                    {{ x.menus_food_content }}
-                                </div>
+                                <p class="text-white">
+                                    <strong>Acai Berry Bowl</strong><br>
+                                    blended frozen blueberry, banana, almond milk, cocoa nib & goji berry granola, coffee honey<br>
+                                    <br>
+                                    <strong>Tropical Fruit</strong><br>
+                                    coconut sago sago, mango sorbet, black rice, kemangi<br>
+                                    <br>
+                                    <strong>Breakfast Berry Crumble</strong><br>
+                                    mixed berries, cinnamon oat crumble, yoghurt sorbet<br>
+                                    <br>
+                                    <strong>Tiramisu French Toast</strong><br>
+                                    raisin brioche, coffee custard, mascarpone ice cream, Tabanan cocoa nib, single-origin coffee hone<br>
+                                    <br>
+                                    <strong>95k</strong><br>
+                                    <strong>Lemon Pancakes</strong><br>
+                                    lemon curd, crème fraiche, grilled lemon, icing sugar<br>
+                                </p>
                           </div>
                           <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                <div class="font-white">
-                                    {{ x.menus_drink_content }}
-                                </div>
+                                <p class="text-white">
+                                    <strong>Acai Berry Bowl</strong><br>
+                                    blended frozen blueberry, banana, almond milk, cocoa nib & goji berry granola, coffee honey<br>
+                                    <br>
+                                    <strong>Tropical Fruit</strong><br>
+                                    coconut sago sago, mango sorbet, black rice, kemangi<br>
+                                    <br>
+                                    <strong>Breakfast Berry Crumble</strong><br>
+                                    mixed berries, cinnamon oat crumble, yoghurt sorbet<br>
+                                    <br>
+                                    <strong>Tiramisu French Toast</strong><br>
+                                    raisin brioche, coffee custard, mascarpone ice cream, Tabanan cocoa nib, single-origin coffee hone<br>
+                                    <br>
+                                    <strong>95k</strong><br>
+                                    <strong>Lemon Pancakes</strong><br>
+                                    lemon curd, crème fraiche, grilled lemon, icing sugar<br>
+                                </p>
                           </div>
                         </div>
                     </div>
@@ -320,24 +351,26 @@
             <div class="col-lg-12 px-0">
                 <div data-aos="fade-up" class="carousel-guest owl-theme">
                     <div class="item">
-                        <img src="{{img}}{{x.guest_image1}}" class="img-fluid">
+                        <img src="images/special-performance-15.jpg" class="img-fluid">
                         <div class="content">
                             <p class="text-white font-weight-bold mb-lg-2 mb-0">
                                 SPECIAL PERFORMANCE BY:
                             </p>
                             <h1 class="text-white font-50-px font-weight-bold w-lg-70p">
-                                {{ x.guest_name1 }}
+                                Daniel
+                                Caesar
                             </h1>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="{{img}}{{x.guest_image2}}" class="img-fluid">
+                        <img src="images/special-performance-15.jpg" class="img-fluid">
                         <div class="content">
                             <p class="text-white font-weight-bold mb-lg-2 mb-0">
                                 SPECIAL PERFORMANCE BY:
                             </p>
                             <h1 class="text-white font-50-px font-weight-bold w-lg-70p">
-                                {{ x.guest_name2 }}
+                                Daniel
+                                Caesar
                             </h1>
                         </div>
                     </div>
@@ -348,7 +381,7 @@
     <div class="container-fluid rsvp" id="rsvp">
         <div class="row">
             <div class="col-lg-7 px-0 d-none d-lg-block">
-                <img data-aos="zoom-out" data-aos-offset="-300" src="{{img}}{{x.rsvp_image}}" class="img-fluid w-100">
+                <img data-aos="zoom-out" data-aos-offset="-300" src="images/rsvp-image-19.jpg" class="img-fluid w-100">
             </div>
             <div data-aos="fade-left" data-aos-offset="-300" class="col-lg-5 bg-coral">
                 <h1 class="text-white font-50-px">
@@ -358,7 +391,60 @@
                 <p class="text-white font-weight-bold mb-5">
                     PSST, IT’S LIMITED <span class="font-27-px"><i class="fa fa-smile-o"></i></span>
                 </p>
-                {% include 'themes/event/brotherfield/attendance.html' %}
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p class="text-white">
+                            Are you attending the grand opening?<br>
+                        </p>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                          <label class="form-check-label text-white" for="inlineRadio1">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                          <label class="form-check-label text-white" for="inlineRadio2">No</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <p class="text-white">
+                            Will you bring anyone to the event?<br>
+                        </p>
+                        <div class="position-relative">
+                            <input class="form-control rounded-pill" type="number" name="your-guest" id="spinner" value="1" placeholder="1" min="1" max="10" aria-live="polite" tabindex="-1" aria-labelledby="label-text">
+                            <a role="button" id="step-increment" class="btn btn-default pt-1" aria-label="add 1" aria-labelledby="step-increment label-text">
+                                <h5 class="text-dgreen">
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="text-white">
+                            Fill your name and contact lists:
+                        </p>
+                        <p class="text-white">
+                            Full Name<br>
+                            <input type="text" class="form-control rounded-pill">
+                        </p>
+                        <p class="text-white">
+                            Email<br>
+                            <input type="text" class="form-control rounded-pill">
+                        </p>
+                        <p class="text-white">
+                            Telephone<br>
+                            <input type="text" class="form-control rounded-pill">
+                        </p>
+                        <br>
+                        <a href="#"  data-toggle="modal" data-target="#exampleModal"  class="rounded-pill bg-yellow text-white px-3 py-2 d-lg-inline d-block text-center mb-3">
+                            SUBMIT
+                        </a>
+                        <a target="_blank" href="E-INVITATION GO RESTAURANT.pdf" class="rounded-pill border-white text-white px-3 py-2 ml-lg-2  d-lg-inline d-block text-center">
+                            DOWNLOAD E-INVITATION
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -369,17 +455,22 @@
                     All rights served © This website is made by Reservasi Dulu
                 </p>
             </div>
+            <div class="col-lg-4 py-4 px-5 text-right order-1 order-lg-2">
+                <a href="#" class="text-white border-white px-3 py-2 rounded-pill">
+                    CREATE A SITE
+                </a>
+            </div>
         </div>
     </div>
     <!-- Modal -->
     <div class="modal fade modal-submit" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
         <div class="col-lg-12 text-right">
-            <img class="times" src="{% static 'rsvp/event/brotherfield/images/circle-times-21.png' %}">
+            <img class="times" src="images/circle-times-21.png">
         </div>
         <div class="modal-content pt-5  thank-you">
             <div class="col-lg-12 py-5">
-            <img class="mx-auto d-block mt-4 mb-5" src="{% static 'rsvp/event/brotherfield/images/logo-04.png' %}">
+            <img class="mx-auto d-block mt-4 mb-5" src="images/logo-04.png">
             <h1 class="text-white text-center mb-4 font-50-px">
                 Thank You
             </h1>
@@ -393,15 +484,16 @@
         </div>
       </div>
     </div>
-
-    <!-- Customize js -->
+    <!-- Features JS -->
     <script>
         new WOW().init();
     </script>
     {% compress js %}
         {% include 'static/js.html' %}
+        <!-- Custom JS -->
         <script type="text/javascript" src="{% static 'rsvp/event/brotherfield/app.js' %}"></script>
     {% endcompress %}
+    <!-- Custom JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>

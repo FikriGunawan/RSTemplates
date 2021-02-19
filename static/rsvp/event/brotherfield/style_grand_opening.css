@@ -207,7 +207,6 @@ input[type=number] {
 .rsvp .bg-coral{
 	padding: 4em;
 }
-#rsvp .rounded-pill.border-white.text-white.text-center{padding: 5.5px 20px !important;}
 .modal-submit .modal-content{
 	background-image: url(images/bg-popup-20.jpg);
 	background-size: cover;
@@ -217,13 +216,10 @@ input[type=number] {
 	margin-right: -50px;
 
 }
-.input-number-arrow{width: 50%;}
-.input-number-arrow #step-decrement{left: -20px;}
-.input-number-arrow #step-increment{right: -20px;}
-.input-number-arrow input[type=number]{
-	color: #fff;
-	background: transparent;
-	border: none;
+#step-increment{
+	position: absolute;
+	right: 0;
+	top: 0;
 }
   @media screen and (max-width: 846px) {
   	p, a, label, th, td, li, input{

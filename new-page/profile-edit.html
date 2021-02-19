@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">   
+    <title>Reservasi Dulu | Profile Edit</title>
+    <link rel="shortcut icon" href="images/ico.ico">
+    <!-- Customize css -->
+    <link rel="stylesheet" type="text/css" href="css/animation.css" >    
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Features css -->
+    <link rel="stylesheet" href="features/animatecss/animate.min.css">
+    <!--Node Modules css-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="top"></div>
+    <nav id="navigation" class="account fadein">
+        <div class="container-fluid pt-lg-20 pb-lg-20 pl-lg-5p pr-lg-5p">
+            <div class="row">
+                <div class="col-lg-9 d-none d-lg-block nav-accountlogo pt-lg-20">
+                    <a href="index.html"><img class="logo" src="images/logo.png" alt="reservasidulu"></a>
+                    <div class="line"></div>
+                    <h5><b>My Account</b></h5>
+                </div>
+                <div class="col-lg-3 d-none d-lg-block pl-lg-0 nav-account pt-lg-10">
+                    <div class="row">
+                        <div class="offset-lg-2 col-lg-7 line">
+                            <h5><b>sf_mariastefani</b></h5>
+                            <p class="mb-lg-0">Stefani Maria</p>
+                        </div>
+                        <div class="col-lg-3 text-right">
+                            <a href=""><img class="img-fluid" src="images/account-icon.png" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-lg-none navigation-mobile">
+                <div class="col-8">
+                    <a href="index.html"><img class="logo" src="images/logo.png" alt="reservasidulu"></a>
+                </div>
+                <div class="col-4 bars">
+                    <div id="toggle">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </div>
+                    <h5><b>Menu</b></h5>
+                </div>
+                <div class="side-nav">
+                    <img class="img-fluid close-icon" src="images/close.png" />
+                    <div class="profile">
+                        <h5><b>sf_mariastefani</b></h5>
+                        <p>Stefani Maria</p>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="">My Template</a></li>
+                            <li><a href="">My Guest</a></li>
+                            <li><a class="active" href="">Profile</a></li>
+                            <li><a href="">Login Info</a></li>
+                            <li><a href="">Log Out</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn-rectangle" href="">Back To Home</a>
+                </div>
+            </div>
+        </div>
+        <img class="navline" src="images/mobile/nav-line.png" />
+    </nav>
+    <!-- Main -->
+    <style type="text/css">
+        @media screen and (max-width: 846px) {
+            .user-content h3{
+                margin-bottom: 7% !important;
+                font-size: 30px !important;
+            }
+            /* User Content */
+            .profile-content .wrap,
+            .login-content .wrap{
+                padding-top: 10%;
+                width: 100%;
+            }
+            .profile-content .wrap .profile-picture{
+                display: block;
+                margin-bottom: 5%;
+            }
+            .user-content.profile-content .wrap h3{
+                margin-bottom: 2% !important;
+                font-family: "Montserrat Bold" !important;
+                font-size: 17px !important;
+                text-align: center;
+            }
+            .user-content.profile-content .wrap h5.name{text-align: center;}
+            .user-content.profile-content .wrap h5.name b{
+                font-family: "Montserrat Regular" !important;
+                font-size: 14px !important;
+                color: #333333;
+            }
+            .user-content.profile-content .btn-whiteoutline,
+            .user-content.profile-content .btn-rectangle{padding: 5%;}
+        }
+    </style>
+    <div id="main-templates">
+        <!-- Section User Navigation -->
+        <div class="navspace"></div>
+        <div class="container-fluid pos-rel user-navigation d-none d-lg-block pl-lg-5p pr-lg-5p">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul>
+                        <li><a href="my-product.html">My Product</a></li>
+                        <li><a href="my-guest.html">My Guests</a></li>
+                        <li><a class="active" href="profile.html">Profile</a></li>
+                        <li><a href="login-info.html">Login Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Section User Content -->
+        <div class="container-fluid pos-rel user-content profile-content pt-lg-5p pb-lg-15p pl-lg-5p pr-lg-5p pt-m-30p pl-m-10p pr-m-10p bg-lightgrey">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="mb-lg-2p">My Profile</h3>
+                    <div class="w-lg-100p line-lightgrey mb-lg-5p"></div>
+                    <div class="wrap">
+                        <div class="container-fluid pl-m-0 pr-m-0">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="profile-picture" style="background: url('images/profile-picture.png');"></div>
+                                </div>
+                                <div class="col-lg-9">
+                                    <h3>sf_mariastefani</h3>
+                                    <h5 class="name mb-lg-4p"><b>Stefani Maria</b></h5>
+                                    <a class="btn-whiteoutline mt-m-15p mb-m-15p" href="">Change Profile Picture</a>
+                                </div>
+                                <div class="col-lg-12 mt-lg-5p">
+                                    <form>
+                                        <h5 class="mb-lg-1p mb-m-3p"><b>Email Address</b></h5>
+                                        <input type="email" name="email" class="form-control mb-lg-4p mb-m-10p" required>
+                                        <h5 class="mb-lg-1p mb-m-3p"><b>First Name</b></h5>
+                                        <input type="text" name="firstname" class="form-control mb-lg-4p mb-m-10p" required>
+                                        <h5 class="mb-lg-1p mb-m-3p"><b>Last Name</b></h5>
+                                        <input type="text" name="lastname" class="form-control mb-lg-4p mb-m-10p" required>
+                                        <h5 class="mb-lg-1p mb-m-3p"><b>Phone Number</b></h5>
+                                        <input type="number" name="phone" class="form-control mb-lg-4p mb-m-10p" required>
+                                        <h5 class="mb-lg-1p mb-m-3p"><b>Address</b></h5>
+                                        <input type="text" name="address" class="form-control mb-lg-4p mb-m-10p" required>
+                                        <h5 class="mb-lg-1p mb-m-3p"><b>Province</b></h5>
+                                        <input type="text" name="province" class="form-control mb-lg-4p mb-m-10p" required>
+                                        <button class="btn-rectangle">Save Changes</button>
+                                        <a class="btn-whiteoutline" href="profile.html">Cancel</a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-lg-100p h-lg-115vh bg-lightgrey"></div>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="pos-rel">
+            <div class="container-fluid pt-lg-30 pl-lg-5p pr-lg-5p">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="gotop">
+                            <img class="text" src="images/gotop-02.png">
+                            <a id="back-top" href="#top" style="">
+                                <img class="child" src="images/gotop-03.png">
+                            </a>
+                            <img class="baloon" src="images/gotop-04.png">
+                        </div>
+                        <ul class="menu">
+                            <li><a href="why-us.html">About</a></li>
+                            <li><a href="tour.html">How-to</a></li>
+                            <li><a href="templates.html">Templates</a></li>
+                            <li><a href="index.html#price">Pricing</a></li>
+                            <li><a href="templates-wedding.html">Blog</a></li>
+                            <li><a href="contact-us.html">Contact</a></li>
+                            <li><a href="index.html">Terms and Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid pl-lg-5p pr-lg-5p pl-m-10p pr-m-10p">
+                <div class="row">
+                    <div class="col-lg-3 mb-lg-5p mb-m-15p">
+                        <a href="index.html"><img class="img-fluid logo" src="images/logo-white.png" alt="reservasidulu"></a>
+                    </div>
+                    <div class="col-12 d-block d-lg-none mb-lg-5p">
+                        <ul class="mobile-menu">
+                            <li>
+                                <a class="menu-collapse collapsed" data-toggle="collapse" href="#collapsefooter1" role="button" aria-expanded="false" aria-controls="collapsefooter1">Explore Us</a>
+                                <div class="collapse" id="collapsefooter1">
+                                    <ul>
+                                        <li><a href="why-us.html">About</a></li>
+                                        <li><a href="tour.html">How-to</a></li>
+                                        <li><a href="index.html#price">Pricing</a></li>
+                                        <li><a href="templates.html">Templates</a></li>
+                                        <li><a href="index.html">Terms and Conditions</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="menu-collapse collapsed" data-toggle="collapse" href="#collapsefooter2" role="button" aria-expanded="false" aria-controls="collapsefooter2">Connect With Us</a>
+                                <div class="collapse" id="collapsefooter2">
+                                    <ul>
+                                        <li><a href="templates-wedding.html">Blog</a></li>
+                                        <li><a href="contact-us.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 pl-lg-0 mb-m-10p pl-m-15">
+                        <div class="brief w-lg-100p">
+                            <p>
+                                E: <a href="mailto:hello@reservasidulu.com">hello@reservasidulu.com</a>
+                            </p>
+                            <p class="d-none d-lg-block">
+                                © 2020 ReservasiDulu.com All Rights Reserved
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <ul class="social mb-m-10p">
+                            <li>
+                                <a target="_blank" href="https://twitter.com/"><img src="images/icon-twitter.png"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.facebook.com/"><img src="images/icon-fb.png"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.instagram.com/"><img src="images/icon-ig.png"></a>
+                            </li>
+                        </ul>
+                        <p class="d-block d-lg-none mb-m-15p">
+                            © 2020 ReservasiDulu.com All Rights Reserved
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <img class="background d-none d-lg-block" src="images/background-footer.png">
+        </div>
+    </footer>
+
+    <!-- Features JS -->
+    <script type="text/javascript" src="features/animatecss/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!-- Node Modules JS -->
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/owl.carousel/dist/owl.carousel.js"></script>
+    <!-- Custom JS -->
+    <script type="text/javascript" src="script/app.js"></script>
+
+</body>
+</html>
